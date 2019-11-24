@@ -19,15 +19,12 @@ flatten2([1, [2, [3, 4], [[5]]]]); // [1, 2, 3, 4, 5]
 flatten2([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]); // [1,2,3]
 
 function flatten2(oldArr) {
-	var newArr = [];
-	for (var i = 0; i < oldArr.length; i++) {
-		if (Array.isArray(oldArr[i])) {
-			newArr = newArr.concat(flatten(oldArr[i]));
-		} else {
-			newArr.push(oldArr[i]);
-		}
-	}
-	return newArr;
+  var newArr = [];
+  for (var i = 0; i < oldArr.length; i++) {
+    return Array.isArray(oldArr[i])
+      ? newArr.concat(flatten2(oldArr[i]))
+      : newArr.push(oldArr[i]);
+  }
 }
 
 function flattenArray(arr) {
