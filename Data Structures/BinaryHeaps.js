@@ -10,6 +10,7 @@ class MaxBinaryHeap {
   bubbleUp() {
     let index = this.values.length - 1;
     const element = this.values[index];
+
     while (index > 0) {
       let parentIndex = Math.floor((index - 1) / 2),
         parent = this.values[parentIndex];
